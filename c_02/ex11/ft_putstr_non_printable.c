@@ -6,7 +6,7 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:11:52 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/16 21:12:38 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/17 22:48:21 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 void ft_putstr_non_printable(char *str)
 {
-    char hex[] = "0123456789abcdef";
+    char *hex;
+
+    hex = "0123456789abcdef";
     while (*str)
     {
         if (*str >= 32 && *str <= 126)

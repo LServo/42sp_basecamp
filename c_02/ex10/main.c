@@ -6,15 +6,35 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:05:42 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/15 17:19:37 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/17 22:34:53 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <bsd/string.h>
 
 unsigned int ft_strlcpy(char *dest, char *src, unsigned int size);
+
+unsigned int ft_strlcpy2(char *dest, char *src, unsigned int size)
+{
+    unsigned int i;
+    int len;
+
+    i = 0;
+    len = 0;
+    while (src[len])
+        len++;
+    if (size > 0)
+    {
+        while (src[i] && (i < (size - 1)))
+        {
+            dest[i] = src[i];
+            i++;
+        }
+        dest[i] = '\0';
+    }
+    return (len);
+}
 
 int main(void)
 {
@@ -28,7 +48,7 @@ int main(void)
     src = calloc(10, sizeof(char));
     dest = calloc(8, sizeof(char));
     src = "alo galera";
-    src_size = strlcpy(dest, src, sizeof(dest));
+    src_size = ft_strlcpy2(dest, src, sizeof(dest));
     printf("strlcpy | src: %s\n", src);
     printf("strlcpy | dest: %s\n", dest);
     printf("strlcpy | src_size: %d\n\n", src_size);
