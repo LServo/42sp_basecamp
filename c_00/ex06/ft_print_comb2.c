@@ -6,7 +6,7 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 15:42:21 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/08 15:36:54 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/13 15:08:02 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void ft_print_manager(int num1, int num2)
 {
     int tab[6];
 
-    tab[0] = num1 / 10 + '0';
-    tab[1] = num1 % 10 + '0';
+    tab[0] = num1 / 10 + 48;
+    tab[1] = num1 % 10 + 48;
     tab[2] = ' ';
-    tab[3] = num2 / 10 + '0';
-    tab[4] = num2 % 10 + '0';
+    tab[3] = num2 / 10 + 48;
+    tab[4] = num2 % 10 + 48;
     tab[5] = 0;
-    while (tab[5] <= 5)
+    while (tab[5] < 5)
         write(1, &tab[tab[5]++], 1);
     if (num1 == 98 && num2 == 99)
         return;

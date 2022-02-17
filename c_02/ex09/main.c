@@ -6,7 +6,7 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 17:00:20 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/10 20:57:43 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/17 21:47:32 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int main(void)
     printf("\n%s", str6);
     printf("\n\n%s", str7);
     ft_strcapitalize(str7);
-    printf("\n%s", str7);
+    printf("\n%s\n", str7);
 }

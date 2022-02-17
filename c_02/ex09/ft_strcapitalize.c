@@ -6,7 +6,7 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 17:23:17 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/10 21:01:01 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/17 21:47:49 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ char *ft_strcapitalize(char *str)
     }
     return (str);
 }
-
-// primeira letra da frase
-// após espaço ou simbolos, incluindo virgula
-// após números NÃO
-//  || !(*str[-1] >= '0' && *str[-1] <= '9')
-// + 32 == a
-// - 32 == A
