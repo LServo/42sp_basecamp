@@ -5,31 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 20:46:17 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/18 05:55:58 by lservo           ###   ########.fr       */
+/*   Created: 2022/02/17 23:21:46 by lservo            #+#    #+#             */
+/*   Updated: 2022/02/18 05:56:26 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
-void ft_putnbr(int nb);
+int ft_strlen(char *str);
+
+void ft_strlen_test(char *str)
+{
+    int size;
+    int ft_size;
+
+    size = strlen(str);
+    ft_size = ft_strlen(str);
+    if (size != ft_size)
+        printf("> KO, return value of ft_strlen differs from expected. expected: %d, got: %d\n", size, ft_size);
+    else
+        printf("> OK. result: %d\n", ft_size);
+}
 
 int main(void)
 {
-    write(1, "-1: ", 4);
-    ft_putnbr(-1);
-    write(1, "\n1: ", 4);
-    ft_putnbr(1);
-    write(1, "\n-10: ", 6);
-    ft_putnbr(-10);
-    write(1, "\n10: ", 5);
-    ft_putnbr(10);
-    write(1, "\nINT_MAX: ", 10);
-    ft_putnbr(INT_MAX);
-    write(1, "\nINT_MIN: ", 10);
-    ft_putnbr(INT_MIN);
-    write(1, "\n", 1);
+    char *str;
+
+    str = "";
+    ft_strlen_test(str);
+    str = "Test";
+    ft_strlen_test(str);
+    str = "Testing mored and more and more and more and more and more.";
+    ft_strlen_test(str);
     return (0);
 }

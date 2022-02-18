@@ -6,7 +6,7 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:04:50 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/16 20:15:26 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/17 23:16:18 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,36 @@
 #include <stdlib.h>
 
 unsigned int ft_strlcat(char *dest, char *src, unsigned int size);
-unsigned int ft_strlcat2(char *dest, char *src, unsigned int size);
-unsigned int ft_strlcat3(char *dest, char *src, unsigned int size);
+unsigned int ft_strlcat2(char *dest, char *src, unsigned int size)
+{
+    unsigned int a;
+    int teste;
+
+    a = 0;
+    while (*dest != 0 && a < size)
+    {
+        a++;
+        dest++;
+    }
+    teste = a < size;
+    while (*src != 0 && a < size)
+    {
+        *dest = *src;
+        dest++;
+        src++;
+        ++a;
+    }
+    if (a == size)
+        dest--;
+    if (teste)
+        *dest = 0;
+    while (*src != 0)
+    {
+        src++;
+        a++;
+    }
+    return (a);
+}
 
 void ft_strlcat_test(char *dest, char *ft_dest, char *src, unsigned int size)
 {

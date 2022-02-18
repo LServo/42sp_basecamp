@@ -6,29 +6,30 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:49:21 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/16 21:13:19 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/18 06:05:33 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
+
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
 
 void ft_putnbr(int nb)
 {
-    int resto;
-
-    if (nb == -2147483648)
+    if (nb == -2147483648) // o número máximo de um tipo int é 2147483647, a raiz quadrada dele é 46340.9, ou seja 46341 iterações
     {
         write(1, "-2147483648", 11);
         return;
     }
     if (nb < 0)
     {
-        write(1, "-", 1);
+        ft_putchar('-');
         nb = -nb;
     }
     if (nb > 9)
         ft_putnbr(nb / 10);
-    resto = nb % 10 + 48;
-    write(1, &resto, 1);
+    ft_putchar(nb % 10 + '0');
 }
