@@ -6,26 +6,29 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:16:28 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/17 13:22:11 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/18 20:13:27 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int loop_manager(int nb)
+int ft_is_prime2(int nb)
 {
-    int tmp;
-    int soma;
+    int count;
 
-    tmp = nb + 1;
-    soma = 0;
-    while (--tmp)
-        if (tmp > 0 && nb % tmp == 0)
-            soma += 1;
-    if (soma == 2)
-        return (nb);
-    return (loop_manager(nb + 1));
+    count = 2;
+    if (nb < 2)
+        return (0);
+    while (count <= nb / 2 && count <= 46341)
+    {
+        if (nb % count == 0)
+            return (0);
+        count++;
+    }
+    return (1);
 }
 
 int ft_find_next_prime(int nb)
 {
-    return (loop_manager(nb + 1));
+    while (nb < 2147483647 && !ft_is_prime2(nb))
+        nb++;
+    return (nb);
 }

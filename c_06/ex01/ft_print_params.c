@@ -6,7 +6,7 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:41:43 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/17 22:11:36 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/18 23:12:42 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,20 @@
 
 void ft_putstr(char *str)
 {
-    while (*str)
-        write(1, str++, 1);
+    int count;
+
+    count = 0;
+    while (str[count])
+        write(1, &str[count++], 1);
     write(1, "\n", 1);
 }
 
 int main(int argc, char **argv)
 {
-    while (*++argv && argc > 1)
-        ft_putstr(*argv);
+    int count;
+
+    count = 1;
+    while (argc > count)
+        ft_putstr(argv[count++]);
     return (0);
 }

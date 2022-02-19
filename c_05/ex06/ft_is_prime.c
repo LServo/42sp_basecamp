@@ -6,21 +6,22 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:05:54 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/17 13:12:13 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/18 20:13:41 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_is_prime(int nb)
 {
-    int tmp;
-    int soma;
+    int count;
 
-    tmp = nb + 1;
-    soma = 0;
-    while (--tmp)
-        if (tmp > 0 && nb % tmp == 0)
-            soma += 1;
-    if (soma == 2)
-        return (1);
-    return (0);
+    count = 2;
+    if (nb < 2)
+        return (0);
+    while (count <= nb / 2 && count <= 46341)
+    {
+        if (nb % count == 0)
+            return (0);
+        count++;
+    }
+    return (1);
 }

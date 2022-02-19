@@ -6,7 +6,7 @@
 /*   By: lservo <lservo@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:48:30 by lservo            #+#    #+#             */
-/*   Updated: 2022/02/17 22:11:43 by lservo           ###   ########.fr       */
+/*   Updated: 2022/02/18 23:12:28 by lservo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void ft_putstr(char *str)
 {
-    while (*str)
-        write(1, str++, 1);
+    int count;
+
+    count = 0;
+    while (str[count])
+        write(1, &str[count++], 1);
     write(1, "\n", 1);
 }
 
